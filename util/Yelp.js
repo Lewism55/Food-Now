@@ -17,6 +17,7 @@ const Yelp = {
                     return {
                         id: business.id,
                         imageSrc: business.image_url,
+                        url: business.url,
                         name: business.name,
                         address: business.location.address1,
                         city: business.location.city,
@@ -26,6 +27,8 @@ const Yelp = {
                         reviewCount: business.review_count,
                     };
                 });
+            } else {
+                return alert('Please make sure to enter a valid cuisine/location! (check your spelling') ? "" : window.location.reload();
             }
         });
     } //CORS is a cross origin resource sharing protocol which prevents issues with accessing a secure server from a non-secure one
